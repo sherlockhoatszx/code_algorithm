@@ -2,7 +2,7 @@
 prerequisites:graph data structure and the BFS algorithm
 BFS and DFS,2method
 
-{0,1,2#1,2#2,2} got 3 nodes,2 spearate mark#。
+{0,1,2#1,2#2,2} got 3 nodes,2 spearating mark is#。
 clone a undirectedgraph,each node in the graph contains one label and a neighbors
 list,
 first node label is 0 ,and edges from 0 to node 1 and node2
