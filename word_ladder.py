@@ -5,9 +5,11 @@ class Solution:
     @param: end: a string
     @param: dict: a set of string
     @return: An integer
+
+    BFS,loop per lelvel
     """
     def ladderLength(self, start, end, dict):
-        # write your code here
+        
         dict.add(end)
         visited = set([start])
         queue = deque([start])
