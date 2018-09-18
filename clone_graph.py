@@ -48,5 +48,23 @@ class Solution_bfs:
         return result
 
 class Solution_dfs:
-    def cloneGraph(self,node):
-        pass
+    def __init__(self):
+        self.dict = {}
+
+    """
+    @param: node: A undirected graph node
+    @return: A undirected graph node
+    """
+    def cloneGraph(self, node):
+        if node is None:
+            return None
+
+        if node.label in self.dict:
+            return self.dict[node.label]
+
+        root = UndirectedGraphNode(node.label)
+        self.dict[node.label] = root
+        for item in node.neighbors:
+            root.neighbors.append(self.cloneGraph(item))
+
+        return root
