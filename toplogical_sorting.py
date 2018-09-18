@@ -33,14 +33,17 @@ class Solution_bfs:
 
         return orders
 
+    def get_indegree(self,graph):
 
-"""
-Definition for a Directed graph node
-class DirectedGraphNode:
-    def __init__(self, x):
-        self.label = x
-        self.neighbors = []
-"""
+        node_to_degree={x:0 for x in graph}
+
+        for node in graph:
+            for nb in node.neighbors:
+                node_to_degree[nb]+=1
+
+        return node_to_degree
+
+
 
 
 class Solution_dfs:
@@ -73,19 +76,3 @@ class Solution_dfs:
             indegree[nb]-=1
             if indegree[nb]==0:
                     self.dfs(indegree,nb,ret)
-
-
-
-
-
-
-
-    def get_indegree(self,graph):
-
-        node_to_degree={x:0 for x in graph}
-
-        for node in graph:
-            for nb in node.neighbors:
-                node_to_degree[nb]+=1
-
-        return node_to_degree
