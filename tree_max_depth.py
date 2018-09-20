@@ -26,7 +26,9 @@ class Solution_dvCq:
         if root is None:
             return
 
-        self.max_depth=1
+
 
         left_depth = self.max_depth(root.left)
         right_depth = self.max_depth(root.right)
+
+        return max(left_depth,right_depth)+1
