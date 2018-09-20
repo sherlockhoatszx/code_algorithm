@@ -3,8 +3,10 @@ class Solution:
     @param inorder : A list of integers that inorder traversal of a tree
     @param postorder : A list of integers that postorder traversal of a tree
     @return : Root of a tree
+    recursive built
     """
     def buildTree(self, inorder, postorder):
+
         if not inorder: return None # inorder is empty
         root = TreeNode(postorder[-1])
         rootPos = inorder.index(postorder[-1])
