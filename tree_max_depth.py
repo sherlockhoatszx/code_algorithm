@@ -24,7 +24,7 @@ class Solution_dvCq:
 
     def max_depth(self,root):
         if root is None:
-            return
+            return 0
 
 
 
