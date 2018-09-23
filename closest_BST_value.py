@@ -40,3 +40,6 @@ class Solution:
 
             if self.compare>0:
                 self.compareValue(node.right,target)
+
+
+'''this version ,{10,5,15,3,6,12,18,#,4,#,8} doesn't pass'''
