@@ -41,5 +41,11 @@ class Solution:
             if self.compare>0:
                 self.compareValue(node.right,target)
 
+        else:
+            if node.right and abs(node.right.val-target)>=abs(self.compare) \
+            and abs(node.right.val-target)<=abs(node.val-target):
+                self.match_node = node.right.val
+                self.compare = target - node.right.val
+
 
 '''this version ,{10,5,15,3,6,12,18,#,4,#,8} doesn't pass'''
