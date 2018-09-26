@@ -40,3 +40,6 @@ class Solution:
             self.dfs(node.left,path,result)
         if node.right:
             self.dfs(node.right,path,result)
+        #delete the leaf node from the stack,and if left and right
+        #is none or have already been traversed,back 2
+        path.pop()
