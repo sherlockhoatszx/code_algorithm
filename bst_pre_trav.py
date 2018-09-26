@@ -15,10 +15,13 @@ class Solution:
             return
 
         self.ret.append(root.val)
+        #keep left left left,meanwhile,put the node in a stack
         self.pre_trav(root.left)
+        #call from the stack from bottom to top bottom.right,top-1.right,top-2.right
+        #stack not expilicty
         self.pre_trav(root.right)
 
-class Solution:
+class Solution2:
 
     '''not recursive way, use stack to store the node
     push right and left, pop it'''
