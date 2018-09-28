@@ -15,17 +15,21 @@ class Solution:
     def kthSmallest(self, root, k):
         # write your code here
         #left to bottom
+        #if stack is None:
+            #return#cause in for loop will judge
         stack=[]
-        while root.left:
+        while root:
             stack.append(root)
-        for i in range(k):
-
+            root = root.left
+        for i in range(k-1):
+            if not stack:
+                break
             if stack[-1].right:
                 node = stack[-1].right
                 while node:
-                    
-                    node = node.left
                     stack.append(node)
+                    node = node.left
+                    #stack.append(node)#here will cause nonetype no value
             else:
                 node = stack.pop()
                 while stack and stack[-1].right == node:
