@@ -36,7 +36,7 @@ class Solution:
                     node = stack.pop()
 
         return stack[-1].val
-'''summary: first left.left.left..to get the smallest value.and add node to a stack
+'''summary: first left.left.left..to get the smallest value.And add nodes to a stack
 then back trace one level, if that get right node,then left left to get the second
 small value ,then in a new loop of for, if poped node is the new last node's right
 node,then back upper again'''
