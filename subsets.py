@@ -1,15 +1,20 @@
 '''recursion and backtracking'''
 
 class Solution:
+    '''like inorder traverse'''
 
     def search(self, nums, S, index):
         if index == len(nums):
             self.results.append(S)
+            print('appending array is',S)
+
             return
+        print(S)
+        print(index)
 
 
         self.search(nums, S + [nums[index]], index + 1)
-
+        print('remove')
         self.search(nums, S, index + 1)
 
     def subsets(self, nums):
@@ -48,7 +53,7 @@ class solution3:
         for i in range(index,len(nums)):
             self.dfs(nums,i+1,path+[nums[i]],res)
 
-s = Solution2()
+s = Solution()
 nums=[1,2,3]
 
 rests = s.subsets(nums)
