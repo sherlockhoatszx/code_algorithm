@@ -18,7 +18,10 @@ def test_i(n):
 test_i(3)
 
 '''the important thing is,1st figiure out how to draw the tree,2nd,how many options
-for the combination:for i in range(len(nums)),or for i in range(2)'''
+for the combination:
+    in the subsets codes for i in range(len(nums)),
+    or
+    in the split string codes for i in range(2)'''
 
 class cutStringSolution:
     def subsets(self,s):
