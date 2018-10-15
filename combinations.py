@@ -25,4 +25,5 @@ class Solution:
 s=Solution()
 import pdb
 pdb.set_trace()
-print(s.combine(4,2))
+print(s.combine(2,1))
+print(s.combine(4,2))#pass
