@@ -14,9 +14,15 @@ class Solution:
     def dfs(self,k,idx,n):
 
         for i in range(idx,n):
-            if i<=n-k:
+            if i+1 ==i+k:
+                subsets=[self.numbers[idx]]
+                self.rets.append(subsets)
+                break
+
+            elif i<=n-k:
 
                 subsets=[self.numbers[idx]]+self.numbers[i+1:i+k]
+
                 self.rets.append(subsets)
         if idx <=n:
             self.dfs(k,idx+1,n)
@@ -26,4 +32,5 @@ s=Solution()
 import pdb
 pdb.set_trace()
 print(s.combine(2,1))
+print(s.combine(5,3))#did not pass
 print(s.combine(4,2))#pass
