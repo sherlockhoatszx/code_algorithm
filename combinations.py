@@ -1,4 +1,4 @@
-class Solution:
+class Solution2:
     """
     @param n: Given the range of numbers
     @param k: Given the numbers of combinations
@@ -26,7 +26,22 @@ class Solution:
                 self.rets.append(subsets)
         if idx <=n:
             self.dfs(k,idx+1,n)
+class Solution:
 
+    def combine(self,n,k):
+        self.rets=[]
+        tmp=[]
+        self.dfs(n,k,1,0,tmp)
+        return self.rets
+
+    def dfs(self,n,k,m,p,tmp):
+        if k==p:
+            self.rets.append(tmp[:])
+            return
+        for i in range(m,n+1):
+            tmp.append(i)
+            self.dfs(n,k,i+1,p+1,tmp)
+            tmp.pop()
 
 s=Solution()
 import pdb
