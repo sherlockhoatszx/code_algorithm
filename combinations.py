@@ -42,6 +42,21 @@ class Solution:
             tmp.append(i)
             self.dfs(n,k,i+1,p+1,tmp)
             tmp.pop()
+import copy
+class Solution3:
+    def combine(self,n,k):
+        self.rets=[]
+        self.dfs=(n,k,[],0)
+        return self.rets
+    def dfs(self,n,k,tmp,i):
+        tmp=copy.deepcopy(tmp)
+        if k==0:
+            self.rets.append(tmp)
+
+        for i in range(i,n+1):
+            tmp.append(i)
+            self.dfs(n,k-1,tmp,i+1)
+            tmp.pop()
 
 s=Solution()
 import pdb
