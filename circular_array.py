@@ -39,7 +39,7 @@ class CircularQueue:
 
         elm = self.arr[self.head]
         self.arr[self.head] =None
-        self.head = （self.head+1)%self.size
+        self.head =（self.head+1)%self.size
         return elm
 
 s=Solution(5)
