@@ -30,7 +30,7 @@ class Solution:
 
 
     def coinChange1(self, coins, amount):
-        # improve big o version，O(NM)time
+        # improve big o version，O(NM)time and O(nm) space
         import sys
         if amount==0:
             return 0
