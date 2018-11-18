@@ -27,11 +27,7 @@ class Solution:
                     dp[curr] = max(dp[curr], dp[prev] + 1)
         return max(dp)
 
-class Solution:
-    """
-    @param nums: An integer array
-    @return: The length of LIS (longest increasing subsequence)
-    """
+
     def longestIncreasingSubsequence3(self,nums):
         '''version3,the greedy+binary_search approach'''
         import sys
@@ -42,10 +38,9 @@ class Solution:
         for idx,val in enumerate(nums):
             #find the first number in minLast >= nums[i]
             idx = self.binary_search(minLast,val)
-            print(idx)
-            minLast[idx]=val
-            print(minLast)
 
+            minLast[idx]=val
+            
         for i in range(n,0,-1):
             if minLast[i]!=sys.maxsize:
                 return i
