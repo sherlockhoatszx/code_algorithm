@@ -32,6 +32,7 @@ class Solution:
             return
         if x==0 or x==1:
             self.rets[x]=1
+            return
         self.helper(x-1)
         self.helper(x-2)
         self.rets[x]=self.rets[x-1]+self.rets[x-2]
