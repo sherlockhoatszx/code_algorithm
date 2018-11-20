@@ -12,7 +12,6 @@ class Solution:
         nums.sort()
         m, index = 0, -1
         for i in range(n):
-            #print('i',i)
             for jj in range(i):
                 #print('jj',jj)
                 if nums[i] % nums[jj] == 0:
