@@ -23,7 +23,8 @@ class Solution:
         return self.results
 import copy
 class Solution2:
-    '''choose subtree''''
+    '''choose subtree,cautions on where to put the deepcopy,where to self.rets
+    append,where temp append''''
     def subsets(self,nums):
         self.rets=[]
         def dfs(nums,temp,i):
