@@ -19,27 +19,31 @@ class Solution:
 
         if len(nums)==len(permutations):
             #attention, permutation copy here
+            
             permutations=permutations[:]
+
+            print(permutations)
             results.append(permutations)
             return
 
         for i in range(0,len(nums)):
+            print('i is',i)
 
             if visited[i]==1:
                 continue
-
             permutations.append(nums[i])
+            print(permutations)
 
             visited[i]=1
 
             self.dfs(nums,results,permutations,visited)
-
+            print('dfs end')
             visited[i]=0
             permutations.pop()
 
 
 s=Solution()
-print(s.permute([1,2,3]))
+print(s.permute([1]))
 
 
 class Solution2:
@@ -48,7 +52,7 @@ class Solution2:
     @return: A list of permutations.
     """
     def permute(self, nums):
-        # 
+        #
         def _permute(result, temp, nums):
             if nums == []:
                 result += [temp]

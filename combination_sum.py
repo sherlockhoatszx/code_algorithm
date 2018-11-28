@@ -19,6 +19,7 @@ class Solution:
         for i in range(start,len(candidates)):
             if target<candidates[i]:
                 return # in the for loop
+            #why the candidates not shallow copy or deep copy
             combination.append(candidates[i])
             #self.dfs(candidates,target-candidates[i],i,combination.append(candidates[i]),results) #make mistake here,cause list.append() excuted inplace,no return
             self.dfs(candidates,target-candidates[i],i,combination,results)
