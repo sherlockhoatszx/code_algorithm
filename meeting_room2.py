@@ -27,7 +27,6 @@ class Solution:
         return meeting_rooms
 
     def minMeetingRooms(self,intervals):
-
         """
         first sort by the start time
         then maintain the min_heap of the end time
