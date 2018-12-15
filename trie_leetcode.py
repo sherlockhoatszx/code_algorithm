@@ -16,7 +16,6 @@ class Trie:
 
             node = node.children[c]
 
-
         node.is_word=True
 
     def find(self,word):
@@ -36,3 +35,7 @@ class Trie:
 
     def startsWith(self,prefix):
         return self.find(prefix) is not None
+
+if __name__=="__main__":
+    tr=Trie()
+    tr.insert('ab')
