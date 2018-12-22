@@ -10,7 +10,8 @@ class Solution:
         #traverse tokens from left to right
         for tk in tokens:
             #if token is number,add to stack
-            if tk.isdigit():
+            #负数isdigit是false 
+            if tk.lstrip('-').isdigit():
                 stack.append(int(tk))
             #if token is operator
             else:
