@@ -1,3 +1,11 @@
+'''summary:2solutions
+1st Solution use dfs first left.left.left..to get the smallest value.And add nodes to a stack
+then back trace one level, if that get right node,then left left to get the second
+small value ,then in a new loop of for, if poped node is the new last node's right
+node,then back upper again
+2nd Solution use dfs(inorder traverse)'''
+
+
 """
 Definition of TreeNode:
 class TreeNode:
@@ -36,7 +44,30 @@ class Solution:
                     node = stack.pop()
 
         return stack[-1].val
-'''summary: first left.left.left..to get the smallest value.And add nodes to a stack
-then back trace one level, if that get right node,then left left to get the second
-small value ,then in a new loop of for, if poped node is the new last node's right
-node,then back upper again'''
+
+
+class Solution:
+    """
+    @param root: the given BST
+    @param k: the given k
+    @return: the kth smallest element in BST
+    """
+    def kthSmallest(self, root, k):
+        self.treelist = []
+
+        self.inOrder(root)
+
+        if k<=0:
+            return None
+        return self.treelist[-1]
+
+    def inOrder(self,root):
+        if root is None:return None
+
+        if root.left is None and root.right is None:
+            self.treelist.append(root.val)
+            return
+
+        self.inOrder(root.left)
+        self.treelist.append(root.val)
+        self.inOrder(root.right)
