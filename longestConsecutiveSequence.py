@@ -1,9 +1,9 @@
 class Solution:
     # @param num, a list of integer
     # @return an integer
-    # O(nlogn)
-    #use classmethod cause I want to save typeing...normaly it should be
-    #instance's method
+    '''O(nlogn)
+    use classmethod cause I want to save typeing...normaly it should be
+    instance's method'''
     @classmethod
     def longestConsecutive1(cls, num):
         num.sort()
@@ -24,8 +24,8 @@ class Solution:
             ans = tmp
         return ans
 
+    ''''O(n),dict to store the element and x+1 x-1 check if in'''
     @classmethod
-    # O(n)
     def longestConsecutive2(cls, num):
 
         dict={}
