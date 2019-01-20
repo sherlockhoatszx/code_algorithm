@@ -30,7 +30,7 @@ class Trie:
     def search(self,word):
 
         node = self.find(word)
-
+        #这里不能掉，因为可能find全部匹配上，但是只是前缀
         return node is not None and node.is_word
 
     def startsWith(self,prefix):
