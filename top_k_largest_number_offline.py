@@ -30,12 +30,6 @@ class Solution2:
     @param {int} k an integer
     @return {int[]} the top k largest numbers in array
     '''
-class Solution:
-    '''
-    @param {int[]} nums an integer array
-    @param {int} k an integer
-    @return {int[]} the top k largest numbers in array
-    '''
     def topk(self,nums,k):
         self.quicksort(nums,0,len(nums)-1)
         topk=[]
@@ -46,7 +40,7 @@ class Solution:
 
 
 
-
+    # NO need to quick sort all nums.compare the pivot index and k
     def quicksort(self,nums,start,end):
         #if start>=k:
             #return
