@@ -14,7 +14,7 @@ class Solution:
         root_a = self.find(a)
         root_b = self.find(b)
 
-        while root_a != root_b:
+        if root_a != root_b:
             self.father[root_a]=root_b
             self.size -= 1
 
