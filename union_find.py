@@ -12,9 +12,6 @@ class WeightedQuickUnion(object):
         self.id=[i for i in range(n)]
         self.sz = [1]*n
 
-        
-
-
     def connected(self,p,q):
         return self.find(p) == self.find(q)
 
