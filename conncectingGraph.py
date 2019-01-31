@@ -1,4 +1,4 @@
-class ConnectingGraph1:
+class ConnectingGraph:
     """
     @param: n: An integer
     """
@@ -9,21 +9,21 @@ class ConnectingGraph1:
         for i in range(1,n+1):
             self.father[i] = i
 
-    def connect(self, p, q):
+    def connect(self, a, b):
         """
         @param: p: An integer
         @param: q: An integer
         @return: nothing
         """
-        idp = self.find(p)
-        idq = self.find(q)
-        if not self.query(p,q):
-            if (self.sz[idp] < self.sz[idq]):
-                self.father[idp] = idq
-                self.sz[idq] += self.sz[idp]
+        ida = self.find(a)
+        idb = self.find(b)
+        if not self.query(a,b):
+            if (self.sz[ida] < self.sz[idb]):
+                self.father[ida] = idb
+                self.sz[idb] += self.sz[ida]
             else:
-                self.father[idq] = idp
-                self.sz[idp] += self.sz[idq]
+                self.father[idb] = ida
+                self.sz[ida] += self.sz[idb]
 
 
     def query(self, a, b):
@@ -36,5 +36,6 @@ class ConnectingGraph1:
         return self.find(a) == self.find(b)
     def find(self,node):
         while node != self.father[node]:
+            self.father[node] = self.father[self.father[node]]
             node = self.father[node]
         return node
