@@ -17,10 +17,13 @@ class WeightedQuickUnion(object):
 
     def find(self,p):
         while (p != self.id[p]):
+            #compression
+            self.id[p]=self.id[self.id[p]]
             p = self.id[p]
         return p
 
     def union(self,p,q):
+        #weighted union
         idp = self.find(p)
         print ("id of %d is: %d" % (p,idp))
         idq = self.find(q)
