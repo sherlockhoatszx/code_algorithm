@@ -5,9 +5,7 @@ class ConnectingGraph:
     def __init__(self, n):
         # do intialization if necessary
         self.sz =[1]*(n+1)
-        self.father = {}
-        for i in range(1,n+1):
-            self.father[i] = i
+        self.father = {i:i for i in range(1,n+1)}
 
     def connect(self, a, b):
         """
