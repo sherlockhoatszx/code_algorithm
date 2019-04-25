@@ -20,6 +20,7 @@ U combine('cats',wordBreak('anddog'))
 
 =['cat sand dog','cats and dog']'''
 #top down memo here, bottom up(not implemented) also works
+import pdb
 class Solution:
     """
     @param: s: A string
@@ -32,7 +33,7 @@ class Solution:
         dqm_rets=[['"'+wd+'"' for wd in ret.split(' ') ]for ret in rets]
 
         ret_str=''
-        for ret in new_rets:
+        for ret in dqm_rets:
             #comma join element and change line in the end
             sub_s =','.join(ret)+'\n'
             ret_str+=sub_s
@@ -59,6 +60,7 @@ class Solution:
             #depth first search
             #sub_partions is backwards partition's return value from call stack pop
             sub_partitions = self.dfs(s[i:], wordDict, memo)
+            print('sub partition',sub_partitions)
             for partition in sub_partitions:
                 partitions.append(prefix + "," + partition)
         #judge if s in word dictionary

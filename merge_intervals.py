@@ -10,3 +10,4 @@ class Solution:
             else:
                 result[-1].end = max(result[-1].end, interval.end)
         return result
+        

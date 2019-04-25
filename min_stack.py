@@ -11,7 +11,7 @@ class MinStack:
     @return: nothing
     """
     def push(self, number):
-        # write your code here
+        
         self.stack.append(number)
         if not self.min_stack or number <= self.min_stack[-1]:
             self.min_stack.append(number)

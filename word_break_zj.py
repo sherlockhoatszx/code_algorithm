@@ -45,6 +45,8 @@ class Solution:
     def dfs(self, s, wordDict, memo):
         #Memoization to save dupliacate computation results to decrease O(t)
         #such as {'sanddog': ['sand dog'], 'dog': ['dog']}
+        import pdb
+        #pdb.set_trace()
         if s in memo:
             return memo[s]
         #corner case judge
@@ -61,6 +63,7 @@ class Solution:
             #depth first search
             #sub_partions is backwards partition's return value from call stack pop
             sub_partitions = self.dfs(s[i:], wordDict, memo)
+            pdb.set_trace()
             for partition in sub_partitions:
                 partitions.append(prefix + " " + partition)
         #judge if s in word dictionary
@@ -72,8 +75,8 @@ class Solution:
         return partitions
 
 if __name__=="__main__":
-    test_s = "aaaaaaaabaaaaaaa"
-    dic = {"a","aa","aaa","ab","aaaa"}
+    test_s = "长春市长春节致辞好"
+    dic = {"长","长春","长春市","市长","春节","致辞"}
 
     wb = Solution()
     print(wb.wordBreak(test_s,dic))
